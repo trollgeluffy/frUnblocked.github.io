@@ -1,28 +1,49 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
 body {
   margin: 0;
   background: #0b1020;
   color: white;
-  font-family: Arial;
 }
 
 header {
-  padding: 20px;
-  background: #111827;
-  font-size: 24px;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  flex: 1 1 100%;
+  margin: 0;
+}
+
+header input,
+header select {
+  background: #1e293b;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .grid {
+  padding: 16px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 14px;
 }
 
 .card {
-  background: #1f2933;
-  border-radius: 16px;
-  padding: 15px;
-  transition: transform 0.2s;
+  background: #1e293b;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .15s;
 }
 
 .card:hover {
@@ -31,15 +52,57 @@ header {
 
 .card img {
   width: 100%;
-  border-radius: 12px;
+  height: 110px;
+  object-fit: cover;
 }
 
-button {
+.card span {
+  display: block;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* PLAYER */
+
+#player {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 9999;
+}
+
+#player iframe {
   width: 100%;
-  padding: 10px;
+  height: 100%;
   border: none;
-  border-radius: 10px;
-  background: #2563eb;
+}
+
+#playerBar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10000;
+}
+
+#playerBar button {
+  background: #ef4444;
+  border: none;
   color: white;
+  padding: 8px 12px;
+  margin-left: 6px;
+  border-radius: 6px;
+  font-size: 16px;
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .card img {
+    height: 90px;
+  }
 }
