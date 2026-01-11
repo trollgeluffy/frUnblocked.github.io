@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body style="margin:0;background:#000">
+<canvas id="c" width="500" height="300"></canvas>
+<script>
+const c=document.getElementById("c"),x=c.getContext("2d");
+let px=230;
+document.onkeydown=e=>{
+ if(e.key=="ArrowLeft")px-=10;
+ if(e.key=="ArrowRight")px+=10;
+};
+setInterval(()=>{
+ x.clearRect(0,0,500,300);
+ x.fillStyle="gray";x.fillRect(0,0,500,300);
+ x.fillStyle="yellow";x.fillRect(px,240,40,40);
+},30);
+</script>
+</body>
+</html>

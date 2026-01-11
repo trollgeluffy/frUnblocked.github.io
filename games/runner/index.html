@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body style="margin:0;background:#111">
+<canvas id="c" width="500" height="300"></canvas>
+<script>
+const c=c=document.getElementById("c"),x=c.getContext("2d");
+let y=200,v=0,obs=500,score=0;
+document.onclick=()=>v=-8;
+setInterval(()=>{
+ x.clearRect(0,0,500,300);
+ v+=0.5;y+=v;
+ if(y>200){y=200;v=0}
+ obs-=6;if(obs<0){obs=500;score++}
+ if(obs<40&&y>170)location.reload();
+ x.fillStyle="white";x.fillRect(40,y,30,30);
+ x.fillStyle="red";x.fillRect(obs,220,30,30);
+ x.fillText("Score "+score,10,20);
+},30);
+</script>
+</body>
+</html>
