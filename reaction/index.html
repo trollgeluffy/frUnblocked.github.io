@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body style="margin:0;background:#111;color:white;display:flex;align-items:center;justify-content:center;height:100vh">
+<button id="b" style="font-size:24px;padding:20px">Wait...</button>
+<script>
+const b=document.getElementById("b");
+let t=0,ready=false;
+setTimeout(()=>{ready=true;b.textContent="CLICK!"},Math.random()*3000+2000);
+b.onclick=()=>{
+ if(!ready)return;
+ alert("Reaction: "+(Date.now()-t)+" ms");
+ location.reload();
+};
+t=Date.now();
+</script>
+</body>
+</html>

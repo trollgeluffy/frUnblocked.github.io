@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body style="margin:0;background:black">
+<canvas id="c" width="400" height="400"></canvas>
+<script>
+const c=document.getElementById("c"),x=c.getContext("2d");
+let y=0;
+setInterval(()=>{
+ x.clearRect(0,0,400,400);
+ y+=5;if(y>400)y=0;
+ x.fillStyle="cyan";
+ x.fillRect(180,y,40,40);
+},30);
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body style="margin:0;background:black">
+<canvas id="c" width="400" height="400"></canvas>
+<script>
+const c=document.getElementById("c"),x=c.getContext("2d");
+let p=180,e=0;
+document.onmousemove=m=>p=m.clientX-20;
+setInterval(()=>{
+ x.clearRect(0,0,400,400);
+ e+=5;if(e>400)e=0;
+ if(e>360&&p>160&&p<240)location.reload();
+ x.fillStyle="white";x.fillRect(p,360,40,40);
+ x.fillStyle="red";x.fillRect(200,e,30,30);
+},30);
+</script>
+</body>
+</html>

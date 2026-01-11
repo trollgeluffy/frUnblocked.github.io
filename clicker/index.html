@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body style="margin:0;background:#0b1020;color:white;text-align:center">
+<h1 id="c">0</h1>
+<button onclick="add()">CLICK</button>
+<script>
+let n=+localStorage.c||0;
+const t=document.getElementById("c");
+function add(){n++;save()}
+function save(){t.textContent=n;localStorage.c=n}
+save();
+</script>
+</body>
+</html>
